@@ -82,9 +82,14 @@ const usersDelete = async(req, res) => {
     // Borrado recomendado
     const user = await User.findByIdAndUpdate( id, {status: false} );
 
+    const userAunthentiqued = req.user;
+
     res.json({
-        user
+        user,
+        //uid
+        //userAunthentiqued
     });
+
 }
 
 module.exports = {
